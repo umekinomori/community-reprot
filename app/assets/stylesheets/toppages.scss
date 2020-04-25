@@ -1,3 +1,15 @@
-// Place all the styles related to the toppages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.header{
+  height: 70px;
+  width: 100%;
+  padding: 0 150px;
+  background-color: #55c500;
+  color: #fff;
+  &__title{
+    font-size: 30px;
+    line-height: 70px;
+    &--text{
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
