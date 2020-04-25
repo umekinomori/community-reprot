@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="header__title">
+        <%= link_to "CommunityReport", root_path, class: "header__title--text" %>
+      </div>
+      <div class="header__right">
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,32 @@
+.header{
+  height: 100px;
+  padding: 0 150px;
+  background-color: #55c500;
+  color: #fff;
+  border: 1px solid darkgray;
+  &__title{
+    font-size: 35px;
+    line-height: 100px;
+    &--text{
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
+
+.content {
+  background-color: rgba(59, 128, 65, 0.247);
+  display: flex;
+  &__left{
+    height: 100vh;
+    width: calc(100% - 60%);
+    background-color: rgba(79, 146, 85, 0);
+    border: 1px solid darkgray;
+  }
+  &__right{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 192, 203, 0.315);
+    border: 1px solid darkgray;
+  }
+}
