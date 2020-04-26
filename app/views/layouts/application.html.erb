@@ -17,6 +17,12 @@
           <i class="fas fa-edit"></i>
           <i class="fas fa-user-plus"></i>
         </div>
+        <% if user_signed_in? %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__title--session"%>
+        <% else %>
+          <%= link_to "新規登録", new_user_registration_path, class: "header__title--session" %>
+          <%= link_to "ログイン", new_user_session_path, class: "header__title--session" %> 
+        <% end %>
       </div>
     </header>
     <%= yield %>
