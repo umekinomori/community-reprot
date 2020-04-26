@@ -13,8 +13,10 @@
     <header class="header">
       <div class="header__title">
         <%= link_to "CommunityReport", root_path, class: "header__title--text" %>
-      </div>
-      <div class="header__right">
+        <div class="header__title--edit">
+          <i class="fas fa-edit"></i>
+          <i class="fas fa-user-plus"></i>
+        </div>
       </div>
     </header>
     <%= yield %>

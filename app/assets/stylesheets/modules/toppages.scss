@@ -1,0 +1,70 @@
+.header{
+  height: 100px;
+  padding: 0 50px;
+  background-color: #55c500;
+  color: #fff;
+  border: 1px solid darkgray;
+  &__title{
+    font-size: 35px;
+    line-height: 100px;
+    &--text{
+      text-decoration: none;
+      color: #fff;
+    }
+    &--edit{
+      float: right;
+      margin-left: 20px;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  &__left{
+    height: calc(100vh - 100px);
+    width: calc(100% - 70%);
+    background-color: #55c500a9;
+    border: 2px solid rgba(98, 98, 206, 0.658);
+  }
+  &__right{
+    height: calc(100vh - 100px);
+    width: 100%;
+    background-color: #55c50044;
+    border: 2px solid rgba(98, 98, 206, 0.658);
+  }
+  .chat-main{
+    width: 100%;
+    background-color: white;
+    border: 2px solid rgba(98, 98, 206, 0.658);
+    .messages{
+      height: calc(100vh - 190px);
+    }
+    .form {
+    background-color: #49a50352;
+    height: 50px;
+    padding: 20px 40px;
+    margin-bottom: 0px;
+    .new-message {
+      display: flex;
+      .input-text {
+        font-size: 16px;
+        height: 50px;
+        width: 100%;
+        padding: 0 15px;
+        color: #434a54;
+          border-style: none;
+        }
+      .submit-btn {
+        width: 100px;
+        height: 50px;
+        padding: 0 30px;
+        margin-left: 15px;
+        background-color: #eeeeee;
+        font-size: 15px;
+        cursor: pointer;
+        color: #1a1d21;
+        }
+      }
+    }
+  }
+}
