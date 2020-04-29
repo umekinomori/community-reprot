@@ -28,3 +28,76 @@
 /public/uploads/*
 /config/database.yml
 
+＃https://www.gitignore.io/api/railsによって作成
+＃https://www.gitignore.io/?templates=railsで編集
+
+### Rails ###
+* .rbc
+capybara-*。html
+.rspec
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/ public / system
+/カバレッジ/
+/ spec / tmp
+* .orig
+rerun.txt
+pickle-email-*。html
+
+＃すべてのログファイルと一時ファイルを無視します。
+/ログ/*
+/ tmp / *
+！/log/.keep
+！/tmp/.keep
+
+＃TODOシークレットがリポジトリにアップロードされることに問題がなければ、このルールをコメント化します
+config / initializers / secret_token.rb
+config / master.key
+
+＃このファイルにプロダクションシークレットがあり、Railsのデフォルトではなくなった場合にのみ含める
+＃config / secrets.yml
+
+＃dotenv
+＃TODO環境変数をコミットできる場合は、このルールをコメント化します
+.env
+
+##環境の正規化：
+/。バンドル
+/ vendor / bundle
+
+＃これらをすべてチェックインして、環境を正規化する必要があります。
+＃Gemfile.lock、.ruby-version、.ruby-gemset
+
+＃rvm <1.11.0をサポートしている場合、または特別なことをしている場合を除き、これは無視してください。
+.rvmrc
+
+＃bower-railsを使用する場合、デフォルトのbower_componentsパスを無視するbower.jsonファイル
+/ vendor / assets / bower_components
+* .bowerrc
+bower.json
+
+＃pow環境設定を無視する
+.powenv
+
+＃Byebugコマンド履歴ファイルを無視します。
+.byebug_history
+
+＃node_modulesを無視する
+node_modules /
+
+＃プリコンパイルされたJavaScriptパックを無視する
+/ public / packs
+/ public / packs-test
+/ public / assets
+
+＃ヤーンファイルを無視
+/yarn-error.log
+ヤーンデバッグ.log *
+.yarn-integrity
+
+＃開発中のアップロードされたファイルを無視する
+/ストレージ/*
+！/storage/.keep
+
+＃https://www.gitignore.io/api/railsの終わり
+
