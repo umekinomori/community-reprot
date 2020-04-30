@@ -1,11 +1,12 @@
 <div class="content">
 <%= render partial: "toppages/left-middle"%>
   <div class="chat-main">
-    <div class="messages"></div>
+    <div id="messages" class="messages">
+    </div>
     <div class="form">
       <form class="new-message">
-        <input class="input-text" placeholder="type a message" type="text">
-        <input class="submit-btn" type="submit" name="commit" value="Send">
+        <input id="chat-input" id="chat-input" class="input-text" placeholder="type a message" type="text">
+        <button id="button" class="submit-btn" type="submit" name="commit" value="Send">送信</button>
       </form>
     </div>
   </div>

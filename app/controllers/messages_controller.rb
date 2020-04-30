@@ -3,8 +3,5 @@ class MessagesController < ApplicationController
     @messages = Message.all
   end
 
-  def create
-    @messages = Message.new
-  end
 
 end
