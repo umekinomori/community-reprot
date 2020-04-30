@@ -1,4 +1,4 @@
-App.relationship = App.cable.subscriptions.create("RelationshipsChannel", {
+App.room = App.cable.subscriptions.create("RoomChannel", {
   connected: function() {
     console.log('connected')
     // Called when the subscription is ready for use on the server
@@ -19,12 +19,13 @@ App.relationship = App.cable.subscriptions.create("RelationshipsChannel", {
   }
 });
 
+
 document.addEventListener('DOMContentLoaded', function(){
   const input = document.getElementById('chat-input')
   const button = document.getElementById('button')
   button.addEventListener('click', function(){
     const content = input.value
-    App.relationship.speak(content)
+    App.room.speak(content)
     input.value = ''
   })
 })
