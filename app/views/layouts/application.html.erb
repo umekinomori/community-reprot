@@ -17,9 +17,6 @@
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__title--session"%>
         <div class="header__title--edit">
           <i class="fas fa-edit"></i>
-          <%= link_to edit_user_relationship_path(@users) do%>
-            <i class="fas fa-edit"></i>
-          <%end%>
           <i class="fas fa-user-plus"></i>
         </div>
         <% else %>
