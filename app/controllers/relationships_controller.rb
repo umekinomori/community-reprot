@@ -4,6 +4,9 @@ class RelationshipsController < ApplicationController
     @messages = Message.all
   end
 
+  def edit
+  end
+
   def create
     following = current_user.follow(@user)
     if following.save
