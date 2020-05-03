@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'toppages#show'
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
   resources :messages, only: :show
   resources :groups, only: [:show, :edit]
   resources :relationships, only: [:create, :destroy, :show, :edit]

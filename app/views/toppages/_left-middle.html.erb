@@ -1,7 +1,10 @@
 <div class="content__left">
   <div class="content__left__friends">
     <div class="content__left__friends--list">
-      <%= link_to "friend", "" %>
+        <% if user_signed_in? %>
+          <%= link_to "friend", edit_group_path(current_user) %>
+        <% else %>
+        <% end %>
     </div>
   </div>
 </div>
