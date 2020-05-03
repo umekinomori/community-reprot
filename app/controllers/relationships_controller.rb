@@ -1,7 +1,7 @@
 class RelationshipsController < ApplicationController
 
   def show
-    @users = User.all
+    user = User.find(params[:id])
     @messages = Message.all
   end
 
@@ -15,4 +15,5 @@ class RelationshipsController < ApplicationController
     redirect_to root_path
   end
 
+  
 end
