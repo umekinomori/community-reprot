@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'toppages#show'
   resources :users, only: [:index, :show, :edit, :update]
   resources :messages, only: :show
-  resources :groups, only: [:show, :edit]
+  resources :groups, only: [:create, :show, :edit, :new]
   resources :relationships, only: [:create, :destroy, :show, :edit]
   post 'follow/:id' => 'relationships#follow', as: 'follow'
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'

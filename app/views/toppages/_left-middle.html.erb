@@ -2,7 +2,7 @@
   <div class="content__left__friends">
     <div class="content__left__friends--list">
         <% if user_signed_in? %>
-          <%= link_to "friend", edit_group_path(current_user) %>
+          <%= link_to "friend", new_group_path(current_user.id) %>
         <% else %>
         <% end %>
     </div>
