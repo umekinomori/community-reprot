@@ -13,12 +13,16 @@
     <header class="header">
       <div class="header__title">
         <%= link_to "CommunityReport", root_path, class: "header__title--text" %>
-        <div class="header__title--edit">
-          <i class="fas fa-edit"></i>
-          <i class="fas fa-user-plus"></i>
-        </div>
         <% if user_signed_in? %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__title--session"%>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__title--session" %>
+        <div class="header__title--edit">
+          <%= link_to new_group_path(current_user.id) do %>
+            <div class="fas fa-edit"></div>
+          <% end %>
+          <%= link_to users_path(@user) do %>
+            <div class="fas fa-user-plus"></div>
+          <% end %>
+        </div>
         <% else %>
           <%= link_to "新規登録", new_user_registration_path, class: "header__title--session" %>
           <%= link_to "ログイン", new_user_session_path, class: "header__title--session" %> 
