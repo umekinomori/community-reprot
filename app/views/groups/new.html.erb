@@ -1,7 +1,8 @@
 <% @group = Group.new unless @group %>
+<div class="groups">
 <%= form_for @group do |f| %>
-  <div class="filed">
-    <%= f.label :district %> <br />
+  <div class="filed--district">
+    <%= f.label :区を選択してください %> <br />
     <%= f.select :district, 
     [["足立区","足立区"],
      ["荒川区","荒川区"],
@@ -28,6 +29,7 @@
      ["目黒区","目黒区"],]%>
   </div>
   <div class="action">
-  <%= f.submit "登録" %>
+  <%= f.submit "登録", class:"district-button" %>
   </div>
+</div>
 <% end %>
