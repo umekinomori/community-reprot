@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   before_action :group_card, only: :create
   def show
+    @group = Group.find(params[:id])
   end
 
   def new
