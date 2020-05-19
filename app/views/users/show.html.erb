@@ -1,5 +1,7 @@
 <h2>ユーザー詳細ページ</h2>
-<p><%= "id: #{@user.id}" %></p>
+<p><%= "ニックネーム: #{@user.nickname}" %></p>
+<p><%= "email: #{@user.email}" %></p>
+<p><%= "登録地区: #{@group.district} "%></p>
 <p><%= "フォロー数: #{@user.follower.count}" %></p>
 <p><%= "フォロワー数: #{@user.followed.count}" %></p>
 <% unless @user == current_user %>
