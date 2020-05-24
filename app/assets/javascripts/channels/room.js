@@ -23,7 +23,8 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
 document.addEventListener('DOMContentLoaded', function(){
   const input = document.getElementById('chat-input')
   const button = document.getElementById('button')
-  button.addEventListener('click', function(){
+  button.addEventListener('click', function(e){
+    e.preventDefault();
     const content = input.value
     App.room.speak(content)
     input.value = ''

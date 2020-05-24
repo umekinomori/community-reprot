@@ -9,7 +9,7 @@
     </div>
     <div class="image--content__select"> 
       <% if user_signed_in? %>
-        <%= link_to 'メッセージへ', message_path(current_user.id), class: "follow"%>
+        <%= link_to 'メッセージへ',user_path(current_user.id), class: "follow"%>
         <%= link_to '登録した地域へ', group_path(current_user.id), class: "district"%>
         <br/>
         <br/>
