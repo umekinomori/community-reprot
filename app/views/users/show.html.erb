@@ -38,10 +38,8 @@
     <% end %>
 </div>
 
-<h2><%= @user.email %></h2>
-
+<div class= "users">
 <% if @user.id == current_user.id %>
-
 <% else %>
   <% if @isRoom == true %>
     <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
@@ -54,5 +52,4 @@
     <% end %>
   <% end %>
 <% end %>
-
-<%= link_to "ユーザー一覧に戻る", users_path %>
+</div>

@@ -20,7 +20,7 @@
             <div class="fas fa-edit"></div>
           <% end %>
         </div>
-        <%= link_to current_user.nickname, users_path(@user), class: "header__title--session" %>
+        <%= link_to current_user.nickname, user_path(current_user.id), class: "header__title--session" %>
         <% else %>
           <%= link_to "新規登録", new_user_registration_path, class: "header__title--session" %>
           <%= link_to "ログイン", new_user_session_path, class: "header__title--session" %> 
