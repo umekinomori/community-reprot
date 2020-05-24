@@ -1,27 +1,19 @@
 class MessagesController < ApplicationController
-  before_action :set_user
+  
 
   def index
     @message = Message.new
     @messages = Message.includes(:user)
   end
 
-
-
   def create
-    @message = Messages.new(message_params)
-    @message.save
-    redirect_to root_path
+    if Entry.where(:user_id => current_user.id, :room_id => params[:message][:room_id]).present?
+      @message = Message.create(params.require(:message).permit(:user_id, :content, :room_id).merge(:user_id => current_user.id))
+      redirect_to "/rooms/#{@message.room_id}"
+    else
+      redirect_back(fallback_location: root_path)
+    end
   end
 
 
-
-  private
-  def message_params
-    params.require(:message).permit(:content).merge(user_id: current_user.id)
-  end
-
-  def set_user
-    
-  end
 end

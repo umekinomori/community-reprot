@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :group_card, only: :create
+
   def show
     @group = Group.find(params[:id])
   end
@@ -11,7 +11,8 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    if @group.savev
+    if @group.save
+       redirect_to :root
     else
       render :new
     end
@@ -27,7 +28,4 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:district).merge(user_id: current_user.id)
   end
   
-  def group_card
-    @group = Group.find_by(user_id: current_user.id)
-  end
 end

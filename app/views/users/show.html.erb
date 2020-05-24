@@ -1,5 +1,4 @@
 <div class="users"> 
-  <h2>ユーザー詳細ページ</h2>
   <p><%= "ニックネーム: #{@user.nickname}" %></p>
   <p><%= "email: #{@user.email}" %></p>
   <p><%= "フォロー数: #{@user.follower.count}" %></p>
@@ -38,3 +37,22 @@
       </p>
     <% end %>
 </div>
+
+<h2><%= @user.email %></h2>
+
+<% if @user.id == current_user.id %>
+
+<% else %>
+  <% if @isRoom == true %>
+    <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
+  <% else %>
+    <%= form_for @room do |f| %>
+      <%= fields_for @entry do |e| %>
+        <%= e.hidden_field :user_id, value: @user.id %>
+      <% end %>
+      <%= f.submit "チャットを始める" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= link_to "ユーザー一覧に戻る", users_path %>
