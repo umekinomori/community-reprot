@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_24_184721) do
+ActiveRecord::Schema.define(version: 2020_05_25_031708) do
+
+  create_table "communities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "district"
+    t.string "ancestry"
+    t.string "volunter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_communities_on_user_id"
+  end
 
   create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -19,14 +29,6 @@ ActiveRecord::Schema.define(version: 2020_05_24_184721) do
     t.datetime "updated_at", null: false
     t.index ["room_id"], name: "index_entries_on_room_id"
     t.index ["user_id"], name: "index_entries_on_user_id"
-  end
-
-  create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "district"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -70,8 +72,8 @@ ActiveRecord::Schema.define(version: 2020_05_24_184721) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "communities", "users"
   add_foreign_key "entries", "rooms"
   add_foreign_key "entries", "users"
-  add_foreign_key "groups", "users"
   add_foreign_key "rooms", "users"
 end

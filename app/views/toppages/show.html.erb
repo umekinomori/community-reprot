@@ -6,24 +6,21 @@
       <p>皆様の健康と安全をサポートします。</p>
       <br/>
       <br/>
+      <br/>
+      <br/>
     </div>
     <div class="image--content__select"> 
       <% if user_signed_in? %>
         <%= link_to 'チャットへ',users_path(@user), class: "follow"%>
-        <%= link_to '登録した地域へ', group_path(current_user.id), class: "district"%>
+        <%= link_to '23区を確認', "#", class: "reprot-index"%>
         <br/>
         <br/>
         <br/>
         <br/>
         <br/>
-        <%= link_to '安否を送信する', "#", class: "safety"%>
-        <%= link_to '区の現状を送信する', "#", class: "reprot"%>
         <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <%= link_to '23区の現状を確認する', "#", class: "reprot-index"%>
+        <%= link_to '安否を送信', "#", class: "safety"%>
+        <%= link_to '区の現状を送信', new_community_path, class: "reprot"%>
       <% else %>
         <p>新規登録またはログインをお願いします</p>
       <% end %>

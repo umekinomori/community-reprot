@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :messages, only: [:create]
   resources :rooms, only: [:create, :show]
-  resources :groups, only: [:create, :show, :edit, :new]
   resources :relationships, only: [:create, :destroy, :show, :edit]
-  
+  resources :communities, only: [:new, :create]
   post 'follow/:id' => 'relationships#follow', as: 'follow'
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
   mount ActionCable.server => '/cable'

@@ -1,6 +1,6 @@
-<% @group = Group.new unless @group %>
-<div class="groups">
-<%= form_for @group do |f| %>
+<div class="community">
+<% @community = Community.new unless @community %>
+<%= form_for @community do |f| %>
   <div class="filed--district">
     <%= f.label :区を選択してください %> <br />
     <%= f.select :district, 
@@ -28,8 +28,26 @@
      ["港区","港区"],
      ["目黒区","目黒区"],]%>
   </div>
-  <div class="action">
-  <%= f.submit "登録", class:"district-button" %>
+  <div class="filed--ancestry">
+    <%= f.label :不足している資源を選択してください %> <br />
+    <%= f.select :ancestry, 
+    [["水","水"],
+     ["米やパン","米やパン"],
+     ["おかず","おかず"],
+     ["日用品","日用品"],
+     ["電気や電池","電気や電池"],
+     ["毛布","毛布"],
+     ["タオル","タオル"],
+     ["衣類","衣類"],
+     ["下着","下着"],] %>
   </div>
+  <div class="filed--volunter">
+  <%= f.label :ボランティアは有無を選択してください %><br/>
+  <%= f.select :volunter,
+    [["必要だと思う","必要だと思う"],
+     ["必要でない","必要でない"],] %>
+  </div>
+  <%= f.submit "登録", class:"community-button" %>
 </div>
 <% end %>
+</div>
