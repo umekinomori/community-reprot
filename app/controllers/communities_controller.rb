@@ -14,6 +14,11 @@ class CommunitiesController < ApplicationController
     end
   end
 
+  def index
+    @communitys = Community.all
+  end
+
+
   private
   def community_params
     params.require(:community).permit(:ancestry, :volunter, :district).merge(user_id: current_user.id)

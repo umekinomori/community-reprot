@@ -1,4 +1,3 @@
-<% if user_signed_in? %>
 <div class="users">
   <p><%= link_to "マイページへ", user_path(current_user) %></p>
   <h2>ユーザー一覧画面</h2>
@@ -12,17 +11,10 @@
       <% end %>
   <% end %>
 </div>
-<% end %>
 
-<% if user_signed_in? %>
 <h2>チャットを送るユーザーを選択してください</h2>
   <% @users.each do |u| %>
   <p><a href="/users/<%= u.id %>"><%= u.nickname %>さん</a></p>
   <hr>
   <% end %>
-  <%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
-<% else %>
-  <%= link_to "ユーザーを登録する", new_user_registration_path %>
-  <br>
-  <%= link_to "ログインする", new_user_session_path %>
-<% end %>
+

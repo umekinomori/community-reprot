@@ -12,7 +12,7 @@
     <div class="image--content__select"> 
       <% if user_signed_in? %>
         <%= link_to 'チャットへ',users_path(@user), class: "follow"%>
-        <%= link_to '23区を確認', "#", class: "reprot-index"%>
+        <%= link_to '23区を確認', communities_path, class: "reprot-index"%>
         <br/>
         <br/>
         <br/>
