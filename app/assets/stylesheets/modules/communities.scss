@@ -1,0 +1,53 @@
+.community {
+  text-align: center;
+  margin: 0 auto;
+  font-family: serif;
+  width: 50%;
+  border: grey solid 1px;
+  &--title {
+    font-size: 20px;
+  }
+  &--title {
+    text-align: center;
+    font-size: 30px;
+  }
+}
+
+.filed--district {
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.filed--ancestry {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.filed--volunter {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.community--button {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    width: 150px;
+    margin-bottom: 50px;
+}
+.community--button:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
+.rankings {
+  &--result{
+    text-align: center;
+  }
+}

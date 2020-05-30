@@ -1,0 +1,12 @@
+<div class="community">
+  <h1 class="community--title">23区の不足している物資とボランティアの有無情報</h1><br/>
+   <% @rankings.each do |r| %>
+    <% district,ancestry,volunter = [r[0],r[1].keys,r[2].keys] %>
+    <p class="rankings--result" border:bule solid 1px;><%= district %><br>不足している物資<br><%= ancestry[0..2].join(",") %><br>ボランティア<%= volunter.first %></p><br/><br/>
+  <% end %>
+</div>
+
+
+ 
+
+

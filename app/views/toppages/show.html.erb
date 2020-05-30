@@ -4,20 +4,24 @@
       <h1>community reprotへようこそ</h1>
       <p>community reprotは安否確認サービスです。</p>
       <p>皆様の健康と安全をサポートします。</p>
+      <small>※※※安否の送信（位置情報）は開発中となります。※※※</small>
+      <br/>
+      <br/>
       <br/>
       <br/>
     </div>
     <div class="image--content__select"> 
       <% if user_signed_in? %>
-        <%= link_to 'メッセージへ', message_path(current_user.id), class: "follow"%>
-        <%= link_to '登録した地域へ', group_path(current_user.id), class: "district"%>
+        <%= link_to 'チャットへ',users_path(@user), class: "follow"%>
+        <%= link_to '23区を確認', communities_path, class: "reprot-index"%>
         <br/>
         <br/>
         <br/>
         <br/>
         <br/>
-        <%= link_to '安否を送信する', "#", class: "safety"%>
-        <%= link_to '区の現状を送信する', "#", class: "reprot"%>
+        <br/>
+        <%= link_to '安否を送信', "#", class: "safety"%>
+        <%= link_to '区の現状を送信', new_community_path, class: "reprot"%>
       <% else %>
         <p>新規登録またはログインをお願いします</p>
       <% end %>
