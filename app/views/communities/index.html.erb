@@ -1,3 +1,12 @@
-<% @communitys.each do |c| %>
-<%= c.district %>
-<% end%>
+<div class="communities">
+  <h1>23区の不足している物資とボランティアの有無情報です</h1>
+  <br/>
+  <div class="community--report">
+  <% @rankings.each do |r| %>
+  <% district,ancestry,volunter = [r[0],r[1].keys,r[2].keys] %>
+  <p><%= district %>:<br>不足している物資<br><%= ancestry[0..2].join(",") %><br>ボランティア<%= volunter.first %></p>
+  <br/>
+  </div>
+  <% end %>
+  
+</div>

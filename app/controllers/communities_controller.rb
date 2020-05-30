@@ -15,7 +15,12 @@ class CommunitiesController < ApplicationController
   end
 
   def index
-    @communitys = Community.all
+    @rankings =  Community.group(:district).pluck(:district).map{|district|
+      [district,
+      Community.where(district: district).group(:ancestry).order(:ancestry).count(:ancestry),
+      Community.where(district: district).group(:volunter).order(:volunter).count(:volunter),
+      ]}
+    
   end
 
 
